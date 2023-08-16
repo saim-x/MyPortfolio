@@ -1,0 +1,88 @@
+/*
+body{
+    background-image: url("/media/web\ coding\ img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.head1{
+    text-align: center;
+    font-size: xx-large;
+    padding: 10px;
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: normal;
+    font-weight: lighter;
+    color: rgb(43, 255, 0);
+
+}
+.ph{
+    text-align: center;
+    font-size: xx-large;
+    color: rgb(43, 255, 0);
+    font: weight 100 ;
+    font-family: 'Luckiest Guy', cursive;
+
+}
+
+.pd{
+    text-align: center;
+    font-size: x-large;
+    color: rgb(0, 247, 255);
+    font-weight: 500;
+    font-family: "Luckiest Guy", b;
+}
+
+
+.pl{
+
+    text-align: center;
+    font-size: x-large;
+    color: rgb(138, 255, 4);
+
+}
+
+
+a:link{
+    color: rgb(255, 0, 0);
+    font-size: x-large;
+}
+
+
+a:visited{
+    color: black;
+    font-size: medium;
+}
+
+a:hover{
+    color: rgb(102, 255, 0);
+    font-size: xx-large;
+}
+
+
+a:active{
+    color: aqua;
+}
+
+.img33{
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-radius: 0%;
+    border: 3px solid rgb(51, 255, 0);
+    
+}
+
+
+.iii{
+    text-align: center;
+    font-size: x-large;
+}
+*/
+#preloader{
+    background: black url(/loadd.gif) no-repeat center center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}

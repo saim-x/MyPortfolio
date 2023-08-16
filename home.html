@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech|Share+Tech+Mono" rel="stylesheet" />
+    <title>Resume
+
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/web.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/media/coding (1) (1).ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body onload="draw()">
+    <canvas id="bg"></canvas>
+    <main id="content">
+        <h1>
+            <div class="hex moved"></div><span>About the Dev</span></h1>
+        <div class="subtext" id="main">
+            <p>The name's Saim. I'm a 16-year-old South Asian web-design student with a tech sort of background and a lot to say about the trends and direction in the field of web-development
+                .</p>
+            <p>I wanted to be a mechanical engineer for most of my life. By the time I changed my mind about that, my liaison with the computer science had drastically altered my worldview already. This still informs much of my work and work ethic - web-design is no less
+                of a science in my eyes than physics or chemistry. (In other words, I like web-developement as long as I can be a nerd about it.)</p>
+        </div>
+        <h2>
+            <div class="hex"></div><span>Skills</span></h2>
+        <div class="subtext coll">
+            A good grasp of object-oriented programming and computing-related math as a whole. Proficient in <b>CSS3</b> and <b>HTML5</b>; making significant inroads into <b>Python</b>. <b>Adobe Photoshop</b>  is also enjoyable for me and can make attractive youtube gaming thumbnails. 
+        </div>
+        <h2>
+            <div class="hex"></div><span>Hobbies & Interests</span></h2>
+        <div class="subtext coll">
+            My Own portfolio (semi-professionally). Photography (unprofessionally). Youtube thumbnails (clumsily) . Novel reading (hobby)
+        </div>
+        <h2>
+            <div class="hex"></div><span>Currently Working On</span></h2>
+        <div class="subtext coll">
+             Learning JavaScript and trying to revise the basics of Python & may reveal more later!
+        </div>
+        
+        <h2>
+            <div class="hex"></div><span>Find Me</span></h2>
+        <div class="subtext coll">
+            | <a href="https://www.instagram.com/saimsnaps/">Instagram</a> | <a href="/dch.html">Fiverr</a>
+        </div>
+        
+        <h2>
+            <div class="hex"></div><span>Contact Me</span></h2>
+        <div class="subtext coll">
+            <ul>
+                <li>Phone: +92 315 2682017</li>
+                <li> WhatsApp:  <a href="https://wa.me/+9203002110833"> +92 300 211 0833</a></li>
+                <li>E-mail: <a>contactsaim0@gmail.com</a></li>
+                <li>Discord: <a>saim#1998</a></li>
+            </ul>
+        </div>
+    </main>
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none" class="wave" id="one"><path d="M-13.36,88.98 C168.85,182.73 276.72,-73.84 506.31,79.10 L500.00,150.00 L0.00,150.00 Z"></path></svg>
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none" class="wave" id="two"><path d="M-13.36,88.98 C168.85,182.73 276.72,-73.84 506.31,79.10 L500.00,150.00 L0.00,150.00 Z"></path></svg>
+    <div id="hex-holder">
+        <div class="hex" id="uno"></div>
+        <div class="hex" id="dos"></div>
+        <div class="hex" id="tres"></div>
+    </div>
+</body>
+<script>
+  function draw() {
+    var canvas = $('canvas')[0];
+    if(canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'rgb(200, 0, 0)';
+        ctx.fillRect(10, 10, 50, 50);
+        ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
+        ctx.fillRect(30, 30, 50, 50);
+    }
+}
+
+$(document).ready(function() {
+    // $(document).draw();
+    $('#content').animate({
+        opacity:1,
+        marginTop:'0',
+    }, 800);
+    $('h2').click(function() {
+        $(this).next('.subtext').slideToggle('fast');
+        $(this).children('.hex').toggleClass('moved');
+    })
+});
+</script>
+
+</html>

@@ -1,0 +1,82 @@
+
+/*
+body{
+    background-image: url('/media/bg.jpg');
+    text-align: center;
+}
+.h{
+    font-size: xxx-large;
+    font-family: 'Teko', sans-serif;
+    color: black;
+    padding: 05px;
+
+
+}
+.p{
+    font-size: xx-large;
+    font-family: 'Bangers', cursive;
+    color: rgb(70, 70, 70);
+    padding: 10px;
+
+}
+
+.img{
+    margin: auto;
+}
+
+.iii{
+    text-align: center;
+    font-size: x-large;
+    color: rgb(255, 68, 0);
+    font-family: 'Bangers', cursive;
+    animation-name: saim;
+    position: relative;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+
+
+
+}
+a:hover{
+    font-size: xx-large;
+    color: rgb(153, 0, 255);
+}
+
+@keyframes saim{
+    0%{left: 0%;}
+    50%{left: 5px;}
+    100%{left: 0%;}
+}
+
+
+
+
+
+*/
+img{
+    max-width: 100%;
+}
+#preloader{
+    background: black url(/loadd.gif) no-repeat center center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+
+
+
+
+
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-track{
+    background: #e556d5;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(#9900ff, #6200ff);
+    border-radius: 10px;
+}

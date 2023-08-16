@@ -1,0 +1,62 @@
+/*
+.head{
+    font-family: 'Luckiest Guy', cursive;
+    text-align: center;
+    background-color: rgb(255, 0, 0);
+    font-size: xx-large;
+    padding-left: 9px;
+
+}
+
+.pic1{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+ 
+
+
+
+html{
+    background-color: rgb(195, 0, 255);
+    background-image: url('/media/gradient.jpg');
+
+
+}
+
+.note{
+    text-align: center;
+    font-size: x-large;
+    color: coral;
+
+}
+h1{
+  padding: 10px;
+  color: rgb(179, 255, 0);
+  padding: auto; 
+
+}
+
+
+*/
+
+.mmmm{
+    font-family: 'Luckiest Guy', cursive;
+    text-align: center;
+    font-size: xx-large;
+   
+    background-image: linear-gradient(#23ce6b 85%, #272d2d);
+
+    padding-left: 9px;
+
+}
+
+#preloader{
+    background: black url(/loadd.gif) no-repeat center center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}

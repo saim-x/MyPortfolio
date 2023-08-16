@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DASHBOARD</title>
+</head>
+<style>
+  
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: url('/media/bg1111.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  flex: 1 0 200px;
+  margin-right: 10px;
+}
+@media (max-width: 768px) {
+  .card {
+    flex-basis: calc(50% - 10px);
+  }
+}
+
+
+</style>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap");
+
+:root {
+  /* Colors */
+  --brand-color: hsl(46, 100%, 50%);
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+  /* Fonts */
+  --font-title: "Montserrat", sans-serif;
+  --font-text: "Lato", sans-serif;
+}
+
+/* RESET */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h2,
+p {
+  margin: 0;
+}
+
+/* GLOBAL STYLES */
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-family: var(--font-title);
+  color: var(--white);
+  line-height: 1.1;
+}
+
+p {
+  font-family: var(--font-text);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--white);
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+/* CARD COMPONENT */
+
+.card {
+  display: grid;
+  place-items: center;
+  width: 80vw;
+  max-width: 21.875rem;
+  height: 28.125rem;
+  overflow: hidden;
+  border-radius: 0.625rem;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+}
+
+.card > * {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.card__background {
+  object-fit: cover;
+  max-width: 100%;
+  height: 100%;
+}
+
+.card__content {
+  --flow-space: 0.9375rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: flex-end;
+  height: 55%;
+  padding: 12% 1.25rem 1.875rem;
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 0%, 0) 0%,
+    hsla(0, 0%, 0%, 0.3) 10%,
+    hsl(0, 0%, 0%) 100%
+  );
+}
+
+.card__content--container {
+  --flow-space: 1.25rem;
+}
+
+.card__title {
+  position: relative;
+  width: fit-content;
+  width: -moz-fit-content; /* Prefijo necesario para Firefox  */
+}
+
+.card__title::after {
+  content: "";
+  position: absolute;
+  height: 0.3125rem;
+  width: calc(100% + 1.25rem);
+  bottom: calc((1.25rem - 0.5rem) * -1);
+  left: -1.25rem;
+  background-color: var(--brand-color);
+}
+
+.card__button {
+  padding: 0.75em 1.6em;
+  width: fit-content;
+  width: -moz-fit-content; /* Prefijo necesario para Firefox  */
+  font-variant: small-caps;
+  font-weight: bold;
+  border-radius: 0.45em;
+  border: none;
+  background-color: var(--brand-color);
+  font-family: var(--font-title);
+  font-size: 1.125rem;
+  color: var(--black);
+}
+
+.card__button:focus {
+  outline: 2px solid black;
+  outline-offset: -5px;
+}
+
+@media (any-hover: hover) and (any-pointer: fine) {
+  .card__content {
+    transform: translateY(62%);
+    transition: transform 500ms ease-out;
+    transition-delay: 500ms;
+  }
+
+  .card__title::after {
+    opacity: 0;
+    transform: scaleX(0);
+    transition: opacity 1000ms ease-in, transform 500ms ease-out;
+    transition-delay: 500ms;
+    transform-origin: right;
+  }
+
+  .card__background {
+    transition: transform 500ms ease-in;
+  }
+
+  .card__content--container > :not(.card__title),
+  .card__button {
+    opacity: 0;
+    transition: transform 500ms ease-out, opacity 500ms ease-out;
+  }
+
+  .card:hover,
+  .card:focus-within {
+    transform: scale(1.05);
+    transition: transform 500ms ease-in;
+  }
+
+  .card:hover .card__content,
+  .card:focus-within .card__content {
+    transform: translateY(0);
+    transition: transform 500ms ease-in;
+  }
+
+  .card:focus-within .card__content {
+    transition-duration: 0ms;
+  }
+
+  .card:hover .card__background,
+  .card:focus-within .card__background {
+    transform: scale(1.3);
+  }
+
+  .card:hover .card__content--container > :not(.card__title),
+  .card:hover .card__button,
+  .card:focus-within .card__content--container > :not(.card__title),
+  .card:focus-within .card__button {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+    transition-delay: 1000ms;
+  }
+
+  .card:hover .card__title::after,
+  .card:focus-within .card__title::after {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: opacity 500ms ease-in, transform 500ms ease-in;
+    transition-delay: 500ms;
+  }
+}
+
+
+
+#preloader{
+    background: black url(/loader.gif) no-repeat center center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+</style>
+<body>
+  <div id="preloader"></div>
+<div class="container">
+
+  <article class="card">
+    <img
+      class="card__background"
+      src="/media/gamer.png"
+      alt="4g ka zamana hai"
+      width="1920"
+      height="2193"/>
+    <div class="card__content | flow">
+      <div class="card__content--container | flow">
+        <h2 class="card__title">Who Am I?</h2>
+        <p class="card__description">
+          Apparently human.
+        </p>
+      </div>
+      <button class="card__button" id="redirectButton">Read more</button>
+    </div>
+  </article>
+
+  <article class="card">
+    <img
+      class="card__background"
+      src="/media/project (2).png"
+      alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+      width="1920"
+      height="2193"
+    />
+    <div class="card__content | flow">
+      <div class="card__content--container | flow">
+        <h2 class="card__title">Projects</h2>
+        <p class="card__description">
+          Learn more about my Projects.
+        </p>
+      </div>
+      <button class="card__button" id="redirectButton1">Read more</button>
+    </div>
+  </article>
+  <article class="card">
+    <img
+      class="card__background"
+      src="/media/abstract-shape.png"
+      alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+      width="1920"
+      height="2193"
+    />
+    <div class="card__content | flow">
+      <div class="card__content--container | flow">
+        <h2 class="card__title">Fine Arts</h2>
+        <p class="card__description">
+          Check out my artistory work.
+        </p>
+      </div>
+      <button class="card__button" id="redirectButton2">Read more</button>
+    </div>
+  </article>
+  <article class="card">
+    <img
+      class="card__background"
+      src="/media/gamer (1).png"
+      alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+      width="1920"
+      height="2193"
+    />
+    <div class="card__content | flow">
+      <div class="card__content--container | flow">
+        <h2 class="card__title">Contact</h2>
+        <p class="card__description">
+        
+          Yeah, you're allowed to.
+        </p>
+      </div>
+      <button class="card__button" id="redirectButton3">Read more</button>
+    </div>
+  </article>
+  
+</div>  
+<article class="card">
+  <img
+    class="card__background"
+    src="/media/authentication (1).png"
+    alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+    width="1920"
+    height="2193"
+  />
+  <div class="card__content | flow">
+    <div class="card__content--container | flow">
+      <h2 class="card__title">Auth</h2>
+      <p class="card__description">
+        Login or Signup. 
+      </p>
+    </div>
+    <button class="card__button" id="redirectButton4">Read more</button>
+  </div>
+</article>
+
+<footer>
+<!--  
+  <svg class="editorial"
+
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 24 150 28 "
+    preserveAspectRatio="none">
+<defs>
+<path id="gentle-wave"
+d="M-160 44c30 0 
+  58-18 88-18s
+  58 18 88 18 
+  58-18 88-18 
+  58 18 88 18
+  v44h-352z" />
+</defs>
+<g class="parallax1">
+  <use xlink:href="#gentle-wave" x="50" y="3" fill="#f461c1"/>
+</g>
+  <g class="parallax2">
+  <use xlink:href="#gentle-wave" x="50" y="0" fill="#4579e2"/>
+  </g>
+    <g class="parallax3">
+  <use xlink:href="#gentle-wave" x="50" y="9" fill="#3461c1"/>
+  </g>
+  <g class="parallax4">
+  <use xlink:href="#gentle-wave" x="50" y="6" fill="#fff"/>  
+</g>
+</svg>
+-->
+
+
+</footer>
+</body>
+<script>
+  // Get the button element by its ID
+var button = document.getElementById('redirectButton');
+
+// Add a click event listener to the button
+button.addEventListener('click', function() {
+// Redirect to the desired URL
+window.location.href = '/home.html';
+
+
+});
+
+var button1 = document.getElementById('redirectButton1');
+button1.addEventListener('click', function() {
+// Redirect to the desired URL
+window.location.href = '/myprojects.html';
+});
+
+var button2 = document.getElementById('redirectButton2');
+button2.addEventListener('click', function() {
+// Redirect to the desired URL
+window.location.href = '/art.html';
+});
+
+var button3 = document.getElementById('redirectButton3');
+button3.addEventListener('click', function() {
+// Redirect to the desired URL
+window.location.href = '/contact.html';
+});
+
+var button4 = document.getElementById('redirectButton4');
+button4.addEventListener('click', function() {
+// Redirect to the desired URL
+window.location.href = '/index.html';
+});
+
+
+
+
+
+</script>
+
+<script>
+var loader = document.getElementById("preloader");
+window.addEventListener("load", function(){
+    loader.style.display = "none";
+})  
+</script>
+</html>
